@@ -1,9 +1,7 @@
 # model_loader.py
 from transformers import pipeline
 
-def load_chat_model(model_name="distilgpt2"):
-    """
-    Load a small text generation model for local inference.
-    """
-    generator = pipeline("text-generation", model=model_name)
+def load_chat_model(model_name="google/flan-t5-base"):
+    print("Device set to use CPU")
+    generator = pipeline("text2text-generation", model=model_name)
     return generator
