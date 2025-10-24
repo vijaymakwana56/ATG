@@ -1,5 +1,5 @@
 # interface.py
-from loader import load_chat_model
+from model_loader import load_chat_model
 from chat_memory import ChatMemory
 
 def main():
