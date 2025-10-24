@@ -15,7 +15,11 @@ def main():
 
         # Combine short memory with the new input
         context = memory.get_context()
-        prompt = f"{context}\nQuestion: {user_input}\nAnswer:"
+        prompt = (
+            "You are a helpful and factual AI assistant. "
+            f"{context}\nUser: {user_input}\nAssistant:"
+        )
+
 
         result = model(prompt, max_new_tokens=128)[0]['generated_text']
         print(f"Bot: {result}\n")
